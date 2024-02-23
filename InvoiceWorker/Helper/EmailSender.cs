@@ -14,7 +14,7 @@ namespace InvoiceWorker.Helper
         private static readonly string SmtpServer = "smtp.office365.com";
         private static readonly int Port = 587;
         private static readonly string Username = "onurtestacc@outlook.com";
-        private static readonly string Password = "o1n9u0r3";
+        private static readonly string Password = "very_hard_password";
 
         public static void SendEmailWithCsvAttachment(MatchingResult result, string fileName)
         {
@@ -50,7 +50,7 @@ namespace InvoiceWorker.Helper
         }
         private static string CreateMailBody(MatchingResult result)
         {
-            string body = string.Format("We receieved an invoice and imported to our booking system.\nTotal processed records: {0}\nSuccessful records: {1}\nTotal invalid records: {2}", 
+            string body = string.Format("We received an invoice and imported it to our booking system.\nTotal processed records: {0}\nSuccessful records: {1}\nTotal invalid records: {2}", 
                 result.TotalRecords, result.SuccesfulRecords, result.InvalidRecords);
             if (result.InvalidRecords > 0)
             {
